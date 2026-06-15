@@ -4,45 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skyblueshop</title>
+
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
+
 body{
     font-family:Arial,sans-serif;
     background:linear-gradient(135deg,#e8f6ff,#bde7ff);
     color:#1f3b57;
 }
+
 header{
     background:#4bb3fd;
     color:white;
     text-align:center;
     padding:50px 20px;
 }
+
 header h1{
     font-size:48px;
     margin-bottom:10px;
 }
+
 header p{
     font-size:18px;
 }
+
 .container{
     max-width:1100px;
     margin:40px auto;
     padding:20px;
 }
+
 .section-title{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:25px;
     font-size:32px;
 }
+
+.category-box{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+.category-btn{
+    border:none;
+    background:white;
+    color:#168fe3;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,128,255,.15);
+}
+
+.category-btn:hover{
+    background:#168fe3;
+    color:white;
+}
+
 .products{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
 }
+
 .card{
     background:white;
     border-radius:20px;
@@ -50,25 +84,30 @@ header p{
     text-align:center;
     box-shadow:0 8px 20px rgba(0,128,255,.15);
 }
+
 .card h3{
     color:#168fe3;
     margin-bottom:10px;
 }
+
 .card p{
     color:#555;
     margin-bottom:10px;
 }
+
 .stock{
     color:#00a651;
     font-weight:bold;
     font-size:18px;
 }
+
 .price{
     color:#007bd1;
     font-size:24px;
     font-weight:bold;
     margin:10px 0;
 }
+
 .buy-btn{
     display:inline-block;
     background:#00b894;
@@ -79,9 +118,11 @@ header p{
     margin-top:10px;
     font-weight:bold;
 }
+
 .buy-btn:hover{
     background:#009970;
 }
+
 .contact{
     text-align:center;
     margin-top:50px;
@@ -89,6 +130,7 @@ header p{
     padding:30px;
     border-radius:20px;
 }
+
 .line-btn{
     display:inline-block;
     background:#06c755;
@@ -99,6 +141,7 @@ header p{
     margin-top:15px;
     font-weight:bold;
 }
+
 footer{
     text-align:center;
     padding:25px;
@@ -106,71 +149,99 @@ footer{
 }
 </style>
 </head>
+
 <body>
+
 <header>
     <h1>☁️ Skyblueshop</h1>
     <p>ร้านขายแอปพรีเมียม ราคาคุ้มค่า ใช้งานง่าย</p>
 </header>
+
 <div class="container">
-<h2 class="section-title">สินค้าแนะนำ</h2>
-<div class="products">
-    <div class="card">
-        <h3>Canva 30 วัน</h3>
-        <p>ใช้งาน Canva Pro 30 วัน</p>
-        <div class="stock">คงเหลือ 5 ชิ้น</div>
-        <div class="price">฿99</div>
-        <a class="buy-btn"
-           href="https://lin.ee/yf2JceP"
-           target="_blank">
-           🛒 ซื้อสินค้า
+
+    <h2 class="section-title">หมวดหมู่สินค้า</h2>
+
+    <div class="category-box">
+        <button class="category-btn" onclick="showCategory('canva')">แคนวา</button>
+        <button class="category-btn" onclick="showCategory('microsoft')">ไมโครซอฟต์</button>
+        <button class="category-btn" onclick="showCategory('all')">ดูทั้งหมด</button>
+    </div>
+
+    <h2 class="section-title">รายการสินค้า</h2>
+
+    <div class="products">
+
+        <div class="card product canva">
+            <h3>Canva 30 วัน</h3>
+            <p>ใช้งาน Canva Pro 30 วัน</p>
+            <div class="stock">คงเหลือ 5 ชิ้น</div>
+            <div class="price">฿99</div>
+            <a class="buy-btn" href="https://lin.ee/yf2JceP" target="_blank">
+                🛒 ซื้อสินค้า
+            </a>
+        </div>
+
+        <div class="card product canva">
+            <h3>Canva 60 วัน</h3>
+            <p>ใช้งาน Canva Pro 60 วัน</p>
+            <div class="stock">คงเหลือ 5 ชิ้น</div>
+            <div class="price">฿179</div>
+            <a class="buy-btn" href="https://lin.ee/yf2JceP" target="_blank">
+                🛒 ซื้อสินค้า
+            </a>
+        </div>
+
+        <div class="card product microsoft">
+            <h3>Microsoft 30 วัน</h3>
+            <p>Microsoft 365 Premium 30 วัน</p>
+            <div class="stock">คงเหลือ 5 ชิ้น</div>
+            <div class="price">฿129</div>
+            <a class="buy-btn" href="https://lin.ee/yf2JceP" target="_blank">
+                🛒 ซื้อสินค้า
+            </a>
+        </div>
+
+        <div class="card product microsoft">
+            <h3>Microsoft 60 วัน</h3>
+            <p>Microsoft 365 Premium 60 วัน</p>
+            <div class="stock">คงเหลือ 5 ชิ้น</div>
+            <div class="price">฿229</div>
+            <a class="buy-btn" href="https://lin.ee/yf2JceP" target="_blank">
+                🛒 ซื้อสินค้า
+            </a>
+        </div>
+
+    </div>
+
+    <div class="contact">
+        <h2>ติดต่อร้านค้า</h2>
+        <p>สอบถามรายละเอียดเพิ่มเติม หรือสั่งซื้อผ่าน LINE</p>
+        <a class="line-btn" href="https://lin.ee/yf2JceP" target="_blank">
+            💬 ติดต่อ LINE Official
         </a>
     </div>
-    <div class="card">
-        <h3>Canva 60 วัน</h3>
-        <p>ใช้งาน Canva Pro 60 วัน</p>
-        <div class="stock">คงเหลือ 5 ชิ้น</div>
-        <div class="price">฿179</div>
-        <a class="buy-btn"
-           href="https://lin.ee/yf2JceP"
-           target="_blank">
-           🛒 ซื้อสินค้า
-        </a>
-    </div>
-    <div class="card">
-        <h3>Microsoft 30 วัน</h3>
-        <p>Microsoft 365 Premium 30 วัน</p>
-        <div class="stock">คงเหลือ 5 ชิ้น</div>
-        <div class="price">฿129</div>
-        <a class="buy-btn"
-           href="https://lin.ee/yf2JceP"
-           target="_blank">
-           🛒 ซื้อสินค้า
-        </a>
-    </div>
-    <div class="card">
-        <h3>Microsoft 60 วัน</h3>
-        <p>Microsoft 365 Premium 60 วัน</p>
-        <div class="stock">คงเหลือ 5 ชิ้น</div>
-        <div class="price">฿229</div>
-        <a class="buy-btn"
-           href="https://lin.ee/yf2JceP"
-           target="_blank">
-           🛒 ซื้อสินค้า
-        </a>
-    </div>
+
 </div>
-<div class="contact">
-    <h2>ติดต่อร้านค้า</h2>
-    <p>สอบถามรายละเอียดเพิ่มเติม หรือสั่งซื้อผ่าน LINE</p>
-    <a class="line-btn"
-       href="https://lin.ee/yf2JceP"
-       target="_blank">
-       💬 ติดต่อ LINE Official
-    </a>
-</div>
-</div>
+
 <footer>
     © 2026 Skyblueshop. All rights reserved.
 </footer>
+
+<script>
+function showCategory(category){
+    const products = document.querySelectorAll('.product');
+
+    products.forEach(product => {
+        if(category === 'all'){
+            product.style.display = 'block';
+        }else if(product.classList.contains(category)){
+            product.style.display = 'block';
+        }else{
+            product.style.display = 'none';
+        }
+    });
+}
+</script>
+
 </body>
 </html>
